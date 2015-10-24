@@ -1,0 +1,10 @@
+<h1>All Users</h1>
+
+<%= @user.each do | u | %>
+	<%= u.name %>, <%= u.email %>
+	<br/>
+<% end %>
+
+
+<br/>
+<%= link_to "Log out", root_path %>

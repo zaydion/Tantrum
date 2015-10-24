@@ -1,0 +1,27 @@
+
+<h1>Tantrum</h1>
+
+ <h4>Log in</h4> 
+<%= form_for(:session, url: login_path) do | f | %>
+  <%= f.label :email %>:
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>:
+  <%= f.password_field :password %>
+
+  <%= f.submit "Log in" %>
+  <% end %>
+
+<br/>
+
+<h4>New user?</h4>
+<%= link_to "Sign Up", new_user_path %>
+<br/>
+<%= link_to "Log out", logout_path %>
+
+<br/>
+  <% if !@current_user.nil? %>
+    @current_user
+  <% else %>
+    no one is logged in.
+  <% end %>
