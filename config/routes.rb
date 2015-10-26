@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get '/users/:id/edit' => 'users#edit'
+
+  patch 'users/:id/edit' => 'users#edit'
+
   resources :users
 
   # get 'users/new'
@@ -19,6 +23,7 @@ Rails.application.routes.draw do
   # get 'users/show'
 
   # get 'users/destroy'
+
 
 
 

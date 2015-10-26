@@ -1,9 +1,23 @@
 <h1>User Profile</h1>
 
 
-<%= @user.name %>, <%= @user.email %>
+<%= @user.name %>
+<div class="col-md-8">
+	<% if @user.posts.any? %>
+	<h3>Rants (<%= @user.posts.count %>)</h3>
+	<ol class="posts">
+	  <%= render @posts %>
+	</ol>
+	  <%= will_paginate @posts %>
+	  <% end %>
+</div>
 
+<% if current_user.admin? && !current_user?(user) %>
+   <%= link_to "delete", @user.destroy %>
+   								data: { confirm: "You sure?" } %>
+  	<% end %>
 
-
+<br/>
+<%= link_to "Edit Profile", edit_user_path %>
 <br/>
 <%= link_to "Log out", root_path %>

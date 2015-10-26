@@ -1,10 +1,13 @@
 <h1>All Users</h1>
 
-<%= @user.each do | u | %>
-	<%= u.name %>, <%= u.email %>
-	<br/>
+<%= will_paginate %>
+
+<% @users.each do | user | %>
+	<%= render user %>
 <% end %>
 
+
+<%= will_paginate %>
 
 <br/>
 <%= link_to "Log out", root_path %>
