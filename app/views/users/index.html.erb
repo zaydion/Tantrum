@@ -1,13 +1,22 @@
+
+<div class="all_users_title">
 <h1>All Users</h1>
-
-<%= will_paginate %>
-
+</div>
+<%= link_to 'Home', root_path %>
+<%= link_to 'View Users', users_path %>
+<div class="col-md-4">
+	<div class="users_list">
+<%= will_paginate @users %>
 <% @users.each do | user | %>
 	<%= render user %>
 <% end %>
-
-
 <%= will_paginate %>
-
 <br/>
 <%= link_to "Log out", root_path %>
+  </div>
+</div>
+
+
+
+
+<br/>

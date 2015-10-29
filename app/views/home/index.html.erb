@@ -1,7 +1,13 @@
 
+<div id="grad" class="col-md-12">
+<header>
 <h1>Tantrum</h1>
 
- <h4>Log in</h4> 
+
+<%= link_to 'View Users', users_path %>
+
+<div class="col-md-6 col-md-offset-2">
+
 <%= form_for(:session, url: login_path) do | f | %>
   <%= f.label :email %>:
   <%= f.email_field :email %>
@@ -11,13 +17,37 @@
 
   <%= f.submit "Log in" %>
   <% end %>
+</header>
 
+</div> 
+
+<div class="post_from_home">
+  <h2> Start Rant </h2>
+<%= form_for @post do | f | %>
+      <%= f.text_area :content, placeholder: "Start expressing yourself here.." %><br/>
+      <%= f.submit "Publish", :class =>"publish_btn" %> 
+    <% end %>
+</div>
+
+
+  <div class="container">
+  	<div class="col-md-8 col-md-offset-2">
+      <% if !Post.all.empty? %>
+          <%= render Post.all %>
+        <% else %>
+          <span class="no_posts"><%= 'No recent posts..' %></span>
+        <% end %>
+  	</div>
+  </div>
+
+</div>
 <br/>
-
+<div class="jumbotron">
+  <div class="footer">
 <h4>New user?</h4>
-<%= link_to "Sign Up", new_user_path %>
-<br/>
-<%= link_to "Log out", logout_path %>
-
-<br/>
+<ul>
+<li><%= link_to "Sign Up", new_user_path %></li> 
+</ul>
+  </div>
+</div>
 

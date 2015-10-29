@@ -2,4 +2,9 @@
 	<%= link_to post.user.name, post.user %>
 	<%= post.content %>
 	Posted <%= time_ago_in_words(post.created_at) %> ago.
+	<% if current_user?(post.user) %>
+	<%= link_to 'delete', post, method: :delete,
+								data: { confirm: "are you sure?" } %>
+<% end %>
 </li>
+

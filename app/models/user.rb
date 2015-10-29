@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
     has_many :posts, dependent: :destroy
 
+    self.per_page = 10
+
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
 

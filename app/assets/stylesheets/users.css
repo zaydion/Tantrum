@@ -1,0 +1,48 @@
+
+.users_list {
+	background-color: white;
+	text-align: center;
+	border: 0;
+	border-radius: 0.5em;
+	margin-top: 5em;
+	font-size: 2em;
+	width: 20em;
+			overflow-y: auto;
+}
+
+
+.users_list li {
+	border-bottom: 2px solid #f1f1f1;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+
+.users_post {
+	font-size: 2em;
+}
+
+.posts li {
+	border-bottom: 2px solid #f1f1f1;
+	text-align: center;
+	color: black;
+	padding: 0.5em;
+
+
+}
+
+.posts {
+	background-color: white;
+	text-align: center;
+	border: 0;
+	border-radius: 0.5em;
+	margin-top: 5em;
+	overflow-y: auto;
+	margin-left: -15em;
+	height: 60em;
+}
+
+
+
+
+

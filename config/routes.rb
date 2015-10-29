@@ -14,7 +14,12 @@ Rails.application.routes.draw do
 
   patch 'users/:id/edit' => 'users#edit'
 
-  resources :users
+  resources :users 
+  resources :posts, only: [:create, :destroy]
+
+  get 'posts' => 'posts#create'
+
+  get 'logout' => 'sessions#destroy'
 
   # get 'users/new'
 
